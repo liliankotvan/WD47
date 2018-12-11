@@ -1,4 +1,5 @@
 var btnLayout = document.querySelector("#btnMudaLayout")
+var mural = document.querySelector(".mural")
 
 function alteraNome(){
     if(btnLayout.textContent == "Linhas"){
@@ -9,4 +10,11 @@ function alteraNome(){
 
 }
 
-btnLayout.onclick = alteraNome
+function mudaClasse(){
+    mural.classList.toggle("mural--linha")
+}
+
+
+
+btnLayout.addEventListener("click",mudaClasse)
+btnLayout.addEventListener("click", alteraNome)
