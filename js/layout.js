@@ -1,20 +1,20 @@
-var btnLayout = document.querySelector("#btnMudaLayout")
-var mural = document.querySelector(".mural")
+const btn = document.querySelector("#btnMudaLayout")
+const mural = document.querySelector(".mural")
 
 function alteraNome(){
-    if(btnLayout.textContent == "Linhas"){
-        btnLayout.textContent="Blocos"
+    if(btn.textContent == "Linhas"){
+        btn.textContent="Blocos"
     } else {
-        btnLayout.textContent= "Linhas"
+        btn.textContent= "Linhas"
     }
-
 }
 
 function mudaClasse(){
     mural.classList.toggle("mural--linha")
 }
 
+btn.addEventListener("click",mudaClasse)
+btn.addEventListener("click", alteraNome)
+btn.classList.remove("no-js")
 
 
-btnLayout.addEventListener("click",mudaClasse)
-btnLayout.addEventListener("click", alteraNome)
