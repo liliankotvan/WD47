@@ -2,10 +2,10 @@ const btn = document.querySelector("#btnMudaLayout")
 const mural = document.querySelector(".mural")
 
 function alteraNome(){
-    if(btn.textContent == "Linhas"){
-        btn.textContent="Blocos"
+    if(btn.textContent == "Blocos"){
+        btn.textContent="Linhas"
     } else {
-        btn.textContent= "Linhas"
+        btn.textContent= "Blocos"
     }
 }
 

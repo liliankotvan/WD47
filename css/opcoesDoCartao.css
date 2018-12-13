@@ -24,6 +24,10 @@
 	background-position: center center;
 	background-repeat: no-repeat;
 	text-indent: -99999px;
+
+	pointer-events:none;
+	opacity: 0;
+	transition: opacity .3s;
 }
 
 .opcoesDoCartao-opcao:first-child {
@@ -55,4 +59,11 @@
 .opcoesDoCartao-radioTipo:checked + .opcoesDoCartao-tipo {
 	background: currentcolor;
 	border: 5px solid rgba(0,0,0,.5);
+}
+
+
+.cartao:hover .opcoesDoCartao-opcao,
+.cartao--focado .opcoesDoCartao-opcao{
+	opacity: 1;
+	pointer-events: auto;
 }
