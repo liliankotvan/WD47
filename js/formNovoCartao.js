@@ -1,6 +1,7 @@
 ;(function(){
 
     const form = document.querySelector(".formNovoCartao")
+    let numeroDoCartao = 0
 
     form.addEventListener("submit", function(event){
         event.preventDefault()
@@ -16,9 +17,14 @@
                 event.target.remove()
             })
             form.insertBefore(msgErro, btnSubmit)
+        } else {
+           adicionaCartaoNoMural({conteudo:textarea.value})
         }
+        textarea.value= ""
     })
 
     form.classList.remove("no-js")
+
+
 
 })()
