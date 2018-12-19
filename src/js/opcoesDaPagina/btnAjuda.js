@@ -7,7 +7,7 @@
             ,{conteudo: "Clique no  Botão Linhas para Alterar o Layout", cor: "#92C4EC"}
         ]
         ajudas.forEach(function(ajuda){
-            adicionaCartaoNoMural(ajuda)
+            cartao.adiciona(ajuda)
         })
     })
     btnAjuda.classList.remove("no-js")
