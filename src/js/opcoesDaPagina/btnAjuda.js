@@ -1,4 +1,27 @@
+;(function(){
+    const btnAjuda = $("#btnAjuda")
+    btnAjuda.on("click", function(){
+        const xhr = new XMLHttpRequest()                                 /*cria requisição*/
+        xhr.open("GET", "https://ceep.herokuapp.com/cartoes/instrucoes") /*recebe xml - estabelece conexão*/
+        xhr.responseType = "json"                   /* declara retorno das informações em formato de json"*/
+        xhr.send()                                  /*envia requisição*/
+        xhr.addEventListener("load", function(){    /*carrega os dads enviados pela conexão*/
+            const objeto = xhr.response
+            const ajudas = objeto.instrucoes
 
+            ajudas.forEach(function(ajuda){
+                cartao.adiciona(ajuda)
+            })
+        })
+    })
+    btnAjuda.removeClass("no-js")
+})()
+
+
+
+
+
+/*
 ;(function(){
     const btnAjuda = document.querySelector("#btnAjuda")
     btnAjuda.addEventListener("click", function(){
@@ -12,7 +35,7 @@
     })
     btnAjuda.classList.remove("no-js")
 })()
-
+*/
 
 /*
 ;(function(){

@@ -71,6 +71,20 @@ const cartao = (function(){
         })
         $(".mural").append(cartao)
     }
+
+        $.ajax({
+            url:"http://ceep.herokuapp.com/cartoes/carregar"
+            ,method:"GET"
+            ,data:{usuario:"liliankotvan@gmail.com"}
+            ,dataType:"jsonp"
+            ,success:function (objeto){
+                const cartoes = objeto.cartoes
+                console.log(objeto)
+                cartoes.forEach(function(cartao){
+                    adicionaCartaoNoMural(cartao)
+                })
+            }
+        })
         return{
             adiciona: adicionaCartaoNoMural
         }
